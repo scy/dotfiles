@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Find a sensible editor and use that to edit the file(s) supplied.
+
+for editor in vim vi nano; do
+	which "$editor" >/dev/null 2>&1 && exec "$editor" "$@"
+done
+
+printf 'edit: no sensible editor found on this system.\n' >&2
+exit 1
