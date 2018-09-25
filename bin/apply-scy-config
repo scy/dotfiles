@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+
+# Checks whether the executable $1 is available and in the PATH.
+have() {
+	which "$1" >/dev/null 2>&1
+}
+
+msg() {
+	printf 'apply-scy-config: %s\n' "$*"
+}
+
+# Try to set the default shell to be fish, if available.
+if have fish; then
+	fishpath="$(which fish)"
+	# Make sure it appears in /etc/shells.
+	if ! grep -Fqx "$fishpath" /etc/shells; then
+		msg 'Adding fish to /etc/shells.'
+		printf '%s\n' "$fishpath" | sudo tee -a /etc/shells >/dev/null
+	fi
+	# Change the shell.
+	msg 'Changing default shell to fish.'
+	chsh -s "$fishpath"
+fi
