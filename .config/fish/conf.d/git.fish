@@ -15,7 +15,7 @@ end
 scy_init_git_abbreviations
 
 # Define a command to edit and reload the aliases.
-function edgit -d 'Edit Git config and update the shell abbreviations'
+function gited -d 'Edit Git config and update the shell abbreviations'
 	edit "$HOME/.gitconfig"
 	scy_init_git_abbreviations
 end

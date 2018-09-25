@@ -2,6 +2,6 @@
 # This means that they need to be compatible to both shells!
 
 # Editing and reloading shell config.
-alias edal='edit_and_source "$HOME/.config/fish/conf.d/aliases.fish"'
-alias edenv='edit_and_source "$HOME/.config/fish/conf.d/env.fish"'
-alias edfunc='funced' # Only makes sense in fish.
+alias abed='edit_and_source "$HOME/.config/fish/conf.d/_abbreviations.fish"'
+alias aled='edit_and_source "$HOME/.config/fish/conf.d/aliases.fish"'
+alias enved='edit_and_source "$HOME/.config/fish/conf.d/env.fish"'
