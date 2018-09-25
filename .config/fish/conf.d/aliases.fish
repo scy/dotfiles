@@ -5,6 +5,3 @@
 alias edal='edit_and_source "$HOME/.config/fish/conf.d/aliases.fish"'
 alias edenv='edit_and_source "$HOME/.config/fish/conf.d/env.fish"'
 alias edfunc='funced' # Only makes sense in fish.
-
-# Git.
-alias g='git'

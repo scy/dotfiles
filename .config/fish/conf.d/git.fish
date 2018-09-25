@@ -6,6 +6,7 @@ function scy_init_git_abbreviations -d 'Create fish abbreviations for Git aliase
 		abbr --erase $line
 	end
 	# Create one for each alias.
+	abbr --add g git
 	for line in (git config --global --get-regexp '^alias\.' | sed -e 's/^alias\.//')
 		set -l split (string split -m 1 ' ' $line)
 		abbr --add g$split[1] git $split[2]
