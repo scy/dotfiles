@@ -1,5 +1,8 @@
 # This file will be sourced by every interactive bash and, since it's sourced in ~/.bash_profile, also by login bashes.
 
+# Load simple aliases. It's a fish file, but I've designed it to be bash compatible.
+. "$HOME/.config/fish/conf.d/aliases.fish"
+
 # Get $PATH from the fish config file. The `eval` call is required to resolve variables in the result (e.g. $HOME).
 scy_init_path() {
 	export PATH="$(eval printf '%s:' $(sed -n -e 's/^set -U fish_user_paths //p' "$HOME/.config/fish/conf.d/path.fish"))$PATH"
