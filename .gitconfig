@@ -1,3 +1,11 @@
 [user]
 	name = Tim Weber
 	email = scy@scy.name
+
+[alias]
+	a = add
+	ap = add --patch
+	c = commit
+	d = diff
+	ds = diff --staged
+	s = status
