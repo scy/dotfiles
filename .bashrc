@@ -9,3 +9,23 @@ scy_init_path() {
 scy_init_env() {
 	eval $(sed -n -e 's/^set -gx \([^ ]*\) /export \1=/p' "$HOME/.config/fish/conf.d/env.fish")
 }
+
+# Edit a shell config file and then reload it. Some special cases for fish configs.
+edit_and_source() {
+	edit "$1"
+	rc="$?"
+	if [ "$rc" -ne 0 ]; then
+		return "$rc"
+	fi
+	case "$1" in
+		*/env.fish)
+			scy_init_env
+			;;
+		*/path.fish)
+			scy_init_path
+			;;
+		*)
+			. "$1"
+			;;
+	esac
+}
