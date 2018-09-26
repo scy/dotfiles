@@ -1,0 +1,10 @@
+#!/bin/sh
+
+heading() {
+	printf '\033[32m%s:\033[0m\n' "$1"
+}
+
+for f in $(find "$HOME/.ssh" -name '*.pub'); do
+	heading "SSH public key $(basename "$f")"
+	cat "$f"
+done
