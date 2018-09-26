@@ -2,6 +2,9 @@
 	name = Tim Weber
 	email = scy@scy.name
 
+[interactive]
+	singlekey = true
+
 [alias]
 	a = add
 	ap = add --patch
