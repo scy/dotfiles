@@ -1,0 +1,2 @@
+# Imho it's just mental that hard-wrapping is the _default_, because it totally breaks editing config files.
+set nowrap
