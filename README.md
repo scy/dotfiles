@@ -6,11 +6,12 @@ This repository tries to apply my preferred settings to both of them.
 
 ## What's configured
 
-* [bash](http://tiswww.case.edu/php/chet/bash/bashtop.html)
-* [fish](https://fishshell.com/)
+* [bash](http://tiswww.case.edu/php/chet/bash/bashtop.html) environment (basic stuff only, I'm mostly using fish)
+* [fish](https://fishshell.com/) environment and abbreviations
 * [Git](https://git-scm.com/)
 * keyboard layout on macOS (manually)
 * Terminal.app (manually)
+* [Vim](https://www.vim.org/) (needs to be fleshed out further)
 
 ## Status
 
