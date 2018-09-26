@@ -14,6 +14,7 @@
 	caam = commit --all --amend
 	d = diff
 	ds = diff --staged
+	ig = edit-ignore
 	l = log
 	lp = log --patch
 	s = status
