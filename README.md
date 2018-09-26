@@ -10,6 +10,7 @@ This repository tries to apply my preferred settings to both of them.
 * [fish](https://fishshell.com/) environment and abbreviations
 * [Git](https://git-scm.com/)
 * keyboard layout on macOS (manually)
+* [OpenSSH](https://www.openssh.com/)
 * Terminal.app (manually)
 * [Vim](https://www.vim.org/) (needs to be fleshed out further)
 
