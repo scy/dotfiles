@@ -9,6 +9,11 @@
 	a = add
 	ap = add --patch
 	c = commit
+	ca = commit --all
+	cam = commit --amend
+	caam = commit --all --amend
 	d = diff
 	ds = diff --staged
+	l = log
+	lp = log --patch
 	s = status
