@@ -1,0 +1,17 @@
+# Default folders on macOS.
+/.Trash/
+/Desktop/
+/Documents/
+/Downloads/
+/Library/
+/Movies/
+/Music/
+/Pictures/
+/Public/
+
+# More macOS stuff.
+**/.DS_Store
+
+# History files.
+/.bash_history
+/.lesshst
