@@ -1,3 +1,33 @@
 #!/bin/sh
 
-exec "$VISUAL" .gitignore
+usage() {
+	cat >&2 <<-"END"
+		usage: git edit-ignore [path]
+
+		Edit the .gitignore file in the current directory or at a given location.
+
+		If `path` is provided, this file will be edited. If the path does not end in
+		`/.gitignore`, this suffix will be added. The directories in `path` will be
+		created on the fly, if they don't exist yet.
+	END
+	exit 1
+}
+
+case "$#" in
+	0)
+		path='.gitignore'
+		;;
+	1)
+		[ "$1" == '-h' -o "$1" == '--help' ] && usage
+		path="$1"
+		if [ "${path%%/.gitignore}" == "$1" ]; then # does not end in `/.gitignore`
+			path="$1/.gitignore"
+		fi
+		mkdir -p "$(dirname "$path")"
+		;;
+	*)
+		usage
+		;;
+esac
+
+exec "$VISUAL" "$path"
