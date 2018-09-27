@@ -1,0 +1,4 @@
+# This directory should exist, but its contents should not be tracked.
+*
+# Except for this file, of course.
+!/.gitignore
