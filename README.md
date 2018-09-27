@@ -9,9 +9,11 @@ This repository tries to apply my preferred settings to both of them.
 * [bash](http://tiswww.case.edu/php/chet/bash/bashtop.html) environment (basic stuff only, I'm mostly using fish)
 * [fish](https://fishshell.com/) environment and abbreviations
 * [Git](https://git-scm.com/)
+* [Karabiner-Elements](https://github.com/tekezo/Karabiner-Elements)
 * keyboard layout on macOS (manually)
 * [OpenSSH](https://www.openssh.com/)
 * Terminal.app (manually)
+* [unicompose](https://github.com/scy/unicompose)
 * [Vim](https://www.vim.org/) (needs to be fleshed out further)
 
 ## Status
@@ -49,6 +51,7 @@ Maybe I'll add automation scripts in the future, but right now it's not worth th
 
 ### On a Mac
 
+* Install [Karabiner-Elements](https://github.com/tekezo/Karabiner-Elements).
 * Change the **keyboard layout** to US English. Not US International, because this results in dead keys which massively disturb my programming flow.
 * In **Terminal.app:**
   * on startup, new window with **Pro**

@@ -22,3 +22,18 @@ if have fish; then
 	msg 'Changing default shell to fish.'
 	chsh -s "$fishpath"
 fi
+
+# If on a Mac, set up the Compose key.
+if [ "$(uname)" = 'Darwin' ]; then
+	msg 'Setting up unicompose.'
+	[ -d "$HOME/proj/unicompose" ] || git clone --recurse-submodules https://github.com/scy/unicompose.git "$HOME/proj/unicompose"
+	cd "$HOME/proj/unicompose"
+	mkdir -p "$HOME/Library/KeyBindings"
+	./convert.py > "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
+	cd - >/dev/null
+fi
+
+# Open Karabiner-Elements if installed, to apply key remappings.
+if [ -x '/Applications/Karabiner-Elements.app/Contents/MacOS/Karabiner-Elements' ]; then
+	nohup '/Applications/Karabiner-Elements.app/Contents/MacOS/Karabiner-Elements' >/dev/null 2>&1 &
+fi
