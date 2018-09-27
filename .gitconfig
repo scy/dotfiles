@@ -12,9 +12,11 @@
 	ca = commit --all
 	cam = commit --amend
 	caam = commit --all --amend
+	cl = clone --recurse-submodules
 	d = diff
 	ds = diff --staged
 	ig = edit-ignore
 	l = log
 	lp = log --patch
+	p = push
 	s = status
