@@ -10,8 +10,8 @@ msg() {
 	printf 'apply-scy-config: %s\n' "$*"
 }
 
-# Try to set the default shell to be fish, if available.
-if have fish; then
+# Try to set the default shell to be fish, if available and not already set.
+if have fish && ! dscl . -read "$HOME" UserShell | grep -q '/fish$'; then
 	fishpath="$(which fish)"
 	# Make sure it appears in /etc/shells.
 	if ! grep -Fqx "$fishpath" /etc/shells; then
