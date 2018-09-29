@@ -1,2 +1,5 @@
+# History files.
+/.netrwhist
+
 # The viminfo file holds marks, register content and history. Don't add it to Git.
 /viminfo
