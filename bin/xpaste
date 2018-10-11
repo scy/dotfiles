@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+if which pbpaste >/dev/null 2>&1; then
+	exec pbpaste
+fi
+
+if which xclip >/dev/null 2>&1; then
+	exec xclip -out -sel clip
+fi
+
+echo 'xpaste: neither pbpaste nor xclip available' >&2
+exit 1

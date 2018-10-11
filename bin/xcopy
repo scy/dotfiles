@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+if which pbcopy >/dev/null 2>&1; then
+	exec pbcopy
+fi
+
+if which xclip >/dev/null 2>&1; then
+	exec xclip -in -sel clip
+fi
+
+echo 'xcopy: neither pbcopy nor xclip available' >&2
+exit 1
