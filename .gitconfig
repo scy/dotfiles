@@ -16,6 +16,7 @@
 	cam = commit --amend
 	caam = commit --all --amend
 	cl = clone --recurse-submodules
+	co = checkout
 	d = diff
 	ds = diff --staged
 	ig = edit-ignore
