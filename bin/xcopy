@@ -1,6 +1,10 @@
 #!/bin/sh
 set -e
 
+if grep -q Microsoft /proc/version; then
+	exec clip.exe
+fi
+
 if which pbcopy >/dev/null 2>&1; then
 	exec pbcopy
 fi

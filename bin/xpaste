@@ -1,6 +1,10 @@
 #!/bin/sh
 set -e
 
+if grep -q Microsoft /proc/version; then
+	exec powershell.exe Get-Clipboard
+fi
+
 if which pbpaste >/dev/null 2>&1; then
 	exec pbpaste
 fi
