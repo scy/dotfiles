@@ -38,6 +38,7 @@ The copy-paste snippet below requires _rsync_ to be available on the system.
 
 ```sh
 cd                                             &&
+test ! -e .orig_home                           &&
 git clone https://github.com/scy/dotfiles.git  &&
 rsync -avb --backup-dir=.orig_home dotfiles/ . &&
 rm -rf dotfiles                                &&
