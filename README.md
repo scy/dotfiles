@@ -34,7 +34,7 @@ Files/directories that would be overwritten will be backed up to `~/.orig_home`.
 
 The copy-paste snippet below requires _rsync_ to be available on the system.
 
-### Unix
+### Unix and Windows (on WSL)
 
 ```sh
 cd                                             &&
@@ -58,3 +58,7 @@ Maybe I'll add automation scripts in the future, but right now it's not worth th
   * change default profile to **Pro**
   * in the **Window** tab of the profile, change the default size to **160x40**
   * in the **Shell** tab of the profile, change the setting to **close the window when the shell exits without error**
+
+### On Windows
+
+* The default Windows console doesn't provide a visual bell, but the audible one is annoying. Therefore, mash Backspace in a bash for a few times to produce an audible bell. Then, right-click on the volume symbol in the task bar, choose "Open Volume Mixer" and mute "Console Window Host".

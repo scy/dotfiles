@@ -1,6 +1,41 @@
 #!/bin/sh
 set -e
 
+packages_updated=''
+
+# Update the package manager repo, but just once. Use the provided command to do that.
+update_packages_once() {
+	[ -n "$packages_updated" ] && return
+	packages_updated='y'
+	msg 'updating packages:' "$@"
+	"$@"
+}
+
+# Are we on Debian?
+on_deb() {
+	test -e /etc/debian_version
+}
+
+# If on Debian, install the specified packages.
+install_deb() {
+	on_deb || return
+	update_packages_once sudo apt update
+	msg 'installing:' "$@"
+	sudo apt install -y "$@"
+}
+
+# Are we on a Mac?
+on_mac() {
+	test "$(uname)" = 'Darwin'
+}
+
+# If on a Mac, install the specified packages.
+install_mac() {
+	on_mac || return
+	msg 'installing:' "$@"
+	brew install "$@"
+}
+
 # Checks whether the executable $1 is available and in the PATH.
 have() {
 	which "$1" >/dev/null 2>&1
@@ -10,8 +45,16 @@ msg() {
 	printf 'apply-scy-config: %s\n' "$*"
 }
 
+get_default_shell() {
+	on_deb && getent passwd "$(whoami)" | cut -d : -f 7
+	on_mac && dscl . -read "$HOME" UserShell | sed -e 's/^UserShell: //'
+}
+
+# fish gets confused if it can't run `apropos`, `nroff` etc.
+install_deb fish man-db
+
 # Try to set the default shell to be fish, if available and not already set.
-if have fish && ! dscl . -read "$HOME" UserShell | grep -q '/fish$'; then
+if have fish && ! get_default_shell | grep -q '/fish$'; then
 	fishpath="$(which fish)"
 	# Make sure it appears in /etc/shells.
 	if ! grep -Fqx "$fishpath" /etc/shells; then
@@ -24,7 +67,7 @@ if have fish && ! dscl . -read "$HOME" UserShell | grep -q '/fish$'; then
 fi
 
 # If on a Mac, set up the Compose key.
-if [ "$(uname)" = 'Darwin' ]; then
+if on_mac; then
 	msg 'Setting up unicompose.'
 	[ -d "$HOME/proj/unicompose" ] || git clone --recurse-submodules https://github.com/scy/unicompose.git "$HOME/proj/unicompose"
 	cd "$HOME/proj/unicompose"
