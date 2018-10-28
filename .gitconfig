@@ -5,6 +5,9 @@
 [interactive]
 	singlekey = true
 
+[url "ssh://github.com/"]
+	pushInsteadOf = https://github.com/
+
 [alias]
 	a = add
 	ap = add --patch
