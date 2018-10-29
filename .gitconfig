@@ -24,3 +24,9 @@
 	lp = log --patch
 	p = push
 	s = status
+
+[pull]
+	# `git pull` should use `rebase` with `--rebase-merges` instead of doing a merge commit.
+	# This only makes sense if nobody else is working on top of your history before you've pushed
+	# it to the same repo you're pulling from.
+	rebase = merges
