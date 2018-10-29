@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Run Composer with more RAM. 4 GB ought to be enough for everyone.
+
+exec php -d memory_limit=4G "$(which composer)" "$@"
