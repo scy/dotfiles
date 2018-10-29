@@ -24,6 +24,9 @@
 	lp = log --patch
 	p = push
 	s = status
+	st = stash
+	stp = stash pop
+	u = pull
 
 [pull]
 	# `git pull` should use `rebase` with `--rebase-merges` instead of doing a merge commit.
