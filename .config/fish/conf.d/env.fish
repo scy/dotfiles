@@ -3,3 +3,6 @@
 # My script to find a sensible editor.
 set -gx EDITOR "$HOME/bin/edit"
 set -gx VISUAL "$EDITOR"
+
+# Talk English to me.
+set -gx LANG 'en_US.UTF-8'
