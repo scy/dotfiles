@@ -18,9 +18,9 @@ case "$#" in
 		path='.gitignore'
 		;;
 	1)
-		[ "$1" == '-h' -o "$1" == '--help' ] && usage
+		[ "$1" = '-h' -o "$1" = '--help' ] && usage
 		path="$1"
-		if [ "${path%%/.gitignore}" == "$1" ]; then # does not end in `/.gitignore`
+		if [ "${path%%/.gitignore}" = "$1" ]; then # does not end in `/.gitignore`
 			path="$1/.gitignore"
 		fi
 		mkdir -p "$(dirname "$path")"
