@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# If we have it, prefer autoborg, else fall back to borg.
+
+[ -x "$HOME/proj/autoborg/autoborg" ] && exec "$HOME/proj/autoborg/autoborg" "$@"
+
+exec borg "$@"

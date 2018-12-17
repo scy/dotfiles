@@ -13,6 +13,9 @@
 # More macOS stuff.
 **/.DS_Store
 
+# Cache.
+/.cache/
+
 # History files.
 /.bash_history
 /.lesshst

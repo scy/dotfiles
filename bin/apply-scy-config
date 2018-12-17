@@ -25,6 +25,11 @@ get_default_shell() {
 	on_mac && dscl . -read "$HOME" UserShell | sed -e 's/^UserShell: //'
 }
 
+clone_project() {
+	project="$1"
+	[ -d "$HOME/proj/$project" ] || git clone --recurse-submodules "https://github.com/scy/$project.git" "$HOME/proj/$project"
+}
+
 # Try to set the default shell to be fish, if available and not already set.
 if have fish && ! get_default_shell | grep -q '/fish$'; then
 	fishpath="$(which fish)"
@@ -38,10 +43,13 @@ if have fish && ! get_default_shell | grep -q '/fish$'; then
 	chsh -s "$fishpath"
 fi
 
+# Clone autoborg.
+clone_project autoborg
+
 # If on a Mac, set up the Compose key.
 if on_mac; then
 	msg 'Setting up unicompose.'
-	[ -d "$HOME/proj/unicompose" ] || git clone --recurse-submodules https://github.com/scy/unicompose.git "$HOME/proj/unicompose"
+	clone_project unicompose
 	cd "$HOME/proj/unicompose"
 	mkdir -p "$HOME/Library/KeyBindings"
 	./convert.py > "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
