@@ -37,7 +37,7 @@ The copy-paste snippet below requires _rsync_ to be available on the system.
 ### Unix and Windows (on WSL)
 
 ```sh
-cd                                             &&
+umask 0022 && cd                               &&
 test ! -e .orig_home                           &&
 git clone https://github.com/scy/dotfiles.git  &&
 rsync -avb --backup-dir=.orig_home dotfiles/ . &&
