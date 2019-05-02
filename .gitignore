@@ -32,5 +32,10 @@
 # Visual Studio Code Remote code and data.
 /.vscode-remote/
 
+# WeeChat client certs and logs.
+/.weechat/certs/
+/.weechat/logs/
+/.weechat/weechat.log
+
 # wget's HSTS database.
 /.wget-hsts
