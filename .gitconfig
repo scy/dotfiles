@@ -29,7 +29,9 @@
 	u = pull
 
 [pull]
-	# `git pull` should use `rebase` with `--rebase-merges` instead of doing a merge commit.
-	# This only makes sense if nobody else is working on top of your history before you've pushed
-	# it to the same repo you're pulling from.
-	rebase = merges
+	# `git pull` should use `rebase` instead of doing a merge commit.
+	# This only makes sense if nobody else is working on top of your history
+	# before you've pushed it to the same repo you're pulling from.
+	# `rebase = merges` would probably be an even better setting, but requires
+	# Git ≥ 2.18, which is too new for Debian stretch. ¯\_(ツ)_/¯
+	rebase = preserve
