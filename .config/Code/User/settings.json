@@ -1,0 +1,32 @@
+/*
+
+To install this file under Windows 10, do the following:
+
+1. Clone <https://github.com/scy/dotfiles.git> to "%USERPROFILE%\dotfiles".
+2. Create "%APPDATA%\Code - Insiders\User", if it doesn't exist.
+3. Remove "%APPDATA%\Code - Insiders\User\settings.json", if it exists.
+4. Start cmd.exe as administrator.
+5. Run: cd "%APPDATA%\Code - Insiders\User" && mklink settings.json ..\..\..\..\dotfiles\.config\Code\User\settings.json
+
+*/
+{
+	// Show whitespace characters, but not single spaces between words.
+	"editor.renderWhitespace": "boundary",
+	// Display vertical rulers after 80 and 120 characters.
+	"editor.rulers": [80, 120],
+
+	// Glob -> File Type associations.
+	"files.associations": {
+		"Saltfile": "yaml"
+	},
+
+	// Files should (almost) always use LF line endings, not CRLF, not even under Windows.
+	"files.eol": "\n",
+
+	// Files should always end in a newline, but not more than one.
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+
+	// Run "git fetch" periodically. Not sure whether I want to keep this.
+	"git.autofetch": true,
+}
