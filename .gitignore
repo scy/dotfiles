@@ -19,3 +19,15 @@
 # History files.
 /.bash_history
 /.lesshst
+/.node_repl_history
+/.python_history
+/.sqlite_history
+
+# npm stuff, mainly cache and logs. I'll ignore more specifically as soon as I need it.
+/.npm/
+
+# Visual Studio Code Remote code and data.
+/.vscode-remote/
+
+# wget's HSTS database.
+/.wget-hsts
