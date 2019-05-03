@@ -23,6 +23,9 @@
 /.python_history
 /.sqlite_history
 
+# Git credentials (see credential.helper=store in .gitconfig).
+/.git-credentials
+
 # npm stuff, mainly cache and logs. I'll ignore more specifically as soon as I need it.
 /.npm/
 

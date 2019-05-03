@@ -5,9 +5,6 @@
 [interactive]
 	singlekey = true
 
-[url "ssh://github.com/"]
-	pushInsteadOf = https://github.com/
-
 [alias]
 	a = add
 	ap = add --patch
@@ -35,3 +32,11 @@
 	# `rebase = merges` would probably be an even better setting, but requires
 	# Git ≥ 2.18, which is too new for Debian stretch. ¯\_(ツ)_/¯
 	rebase = preserve
+
+[credential]
+	# Store HTTPS credentials unencrypted on disk, only protected by file system
+	# permissions. The rationale is: All disks I use to access private Git repos
+	# or to push somewhere should be encrypted anyway, and if the machine is
+	# compromised, all hope is lost anyway. This is the simplest and most cross-
+	# platform solution.
+	helper = store
