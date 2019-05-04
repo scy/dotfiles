@@ -44,7 +44,7 @@ To install this file under Windows 10, do the following:
 	// Files should always end in a newline, but not more than one.
 	"files.insertFinalNewline": true,
 	"files.trimFinalNewlines": true,
-	// Also, lines should _usually_ not end with whitespace. Might have to fine-tune this for Markdown etc.
+	// Also, lines should _usually_ not end with whitespace.
 	"files.trimTrailingWhitespace": true,
 
 	// Run "git fetch" periodically. Not sure whether I want to keep this.
@@ -59,4 +59,12 @@ To install this file under Windows 10, do the following:
 
 	// This apparently sends keystrokes to Microsoft when searching in the settings. Don't need it.
 	"workbench.settings.enableNaturalLanguageSearch": false,
+
+	// Filetype-specific settings.
+	"[markdown]": {
+		// (Soft) wrap long lines so that they fit in the viewport.
+		"editor.wordWrap": "on",
+		// Don't try to suggest things to me, I'm writing prose.
+		"editor.quickSuggestions": false
+	}
 }
