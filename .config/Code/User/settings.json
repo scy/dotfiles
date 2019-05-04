@@ -10,10 +10,28 @@ To install this file under Windows 10, do the following:
 
 */
 {
+	// Show breadcrumbs below the tab bar, telling you where you are in the code.
+	"breadcrumbs.enabled": true,
+
+	// This has a strangely satisfying 80s feel to it.
+	"editor.cursorBlinking": "smooth",
+	// I currently prefer Source Code Pro, and it comes with the Adobe stuff on my machine anyway.
+	"editor.fontFamily": "Source Code Pro, Consolas, 'Courier New', monospace",
+
+	// Make the minimap more abstract, and always show the displayed section (not just when hovering with the mouse).
+	"editor.minimap.renderCharacters": false,
+	"editor.minimap.maxColumn": 120,
+	"editor.minimap.showSlider": "always",
+
 	// Show whitespace characters, but not single spaces between words.
 	"editor.renderWhitespace": "boundary",
 	// Display vertical rulers after 80 and 120 characters.
 	"editor.rulers": [80, 120],
+	// Scroll a bit smoother to help your eyes keep track.
+	"editor.smoothScrolling": true,
+
+	// Hide "Open Editors" section in the explorer. You can see it from the tab bar anyway.
+	"explorer.openEditors.visible": 0,
 
 	// Glob -> File Type associations.
 	"files.associations": {
@@ -26,7 +44,19 @@ To install this file under Windows 10, do the following:
 	// Files should always end in a newline, but not more than one.
 	"files.insertFinalNewline": true,
 	"files.trimFinalNewlines": true,
+	// Also, lines should _usually_ not end with whitespace. Might have to fine-tune this for Markdown etc.
+	"files.trimTrailingWhitespace": true,
 
 	// Run "git fetch" periodically. Not sure whether I want to keep this.
 	"git.autofetch": true,
+
+	// Just show the project and file name. I can see from the icon that this is VS Code.
+	// Starting with the project name allows me to distinguish multiple Code instances in the task bar more easily.
+	"window.title": "${rootName}${separator}${dirty}${activeEditorShort}",
+
+	// Color theme: Solarized Dark. I've tried others, I'm wasn't convinced.
+	"workbench.colorTheme": "Solarized Dark",
+
+	// This apparently sends keystrokes to Microsoft when searching in the settings. Don't need it.
+	"workbench.settings.enableNaturalLanguageSearch": false,
 }
