@@ -1,0 +1,7 @@
+# Sadly, Termux copies the configured font instead of just symlinking, and I don't want to commit it.
+# For the record, it's Source Code Pro currently. ;)
+/font.ttf
+
+# The default shell is configured as a symlink, but as I can't guarantee that it's _installed_ on a fresh system, I'd
+# rather configure it manually.
+/shell
