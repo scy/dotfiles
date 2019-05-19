@@ -10,6 +10,9 @@
 /Pictures/
 /Public/
 
+# Storage symlink on Termux.
+/storage/
+
 # More macOS stuff.
 **/.DS_Store
 
