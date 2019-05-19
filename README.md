@@ -13,6 +13,7 @@ This repository tries to apply my preferred settings to both of them.
 * keyboard layout on macOS (manually)
 * [OpenSSH](https://www.openssh.com/)
 * Terminal.app (manually)
+* [Termux](https://termux.com/)
 * [unicompose](https://github.com/scy/unicompose)
 * [Vim](https://www.vim.org/) (needs to be fleshed out further)
 * [Visual Studio Code](https://code.visualstudio.com/)
@@ -32,9 +33,31 @@ This has the added benefit of you being aware (via `git status`) of new config f
 The setup procedure will clone the repo into a subdir of your home, then moving everything in it (including `.git`) directly into your home dir.
 Files/directories that would be overwritten will be backed up to `~/.orig_home`.
 
-### Unix and Windows (on WSL)
+### Termux
 
-**This copy-paste snippet requires _rsync_ to be available on the system.**
+Install required (and my favorite) packages, setup storage access and change the default shell.
+
+```sh
+pkg install fish git neovim rsync termux-api &&
+termux-setup-storage                         &&
+chsh -s fish
+```
+
+Then, continue as described below in the "Unix" section.
+
+### Debian
+
+Install required packages and change the default shell.
+
+```sh
+apt update                 &&
+apt install fish git rsync &&
+chsh -s $(which fish)
+```
+
+Then, continue as described below in the "Unix" section.
+
+### Unix
 
 ```sh
 which rsync > /dev/null                        &&
@@ -42,8 +65,7 @@ umask 0022 && cd                               &&
 test ! -e .orig_home                           &&
 git clone https://github.com/scy/dotfiles.git  &&
 rsync -avb --backup-dir=.orig_home dotfiles/ . &&
-rm -rf dotfiles                                &&
-bin/apply-scy-config
+rm -rf dotfiles
 ```
 
 ## Manual configuration
