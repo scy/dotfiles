@@ -1,0 +1,6 @@
+# Python executables and libraries installed via pip.
+/bin/
+/lib/python*/site-packages/
+
+# Python virtualenvs.
+/share/virtualenvs/
