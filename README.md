@@ -39,8 +39,8 @@ Files/directories that would be overwritten will be backed up to `~/.orig_home`.
 Install required (and my favorite) packages, setup storage access and change the default shell.
 
 ```sh
-pkg install fish git neovim rsync termux-api &&
-termux-setup-storage                         &&
+pkg install curl fish git neovim perl rsync termux-api &&
+termux-setup-storage                                   &&
 chsh -s fish
 ```
 
