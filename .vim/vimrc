@@ -5,6 +5,10 @@ filetype plugin on
 syntax on
 set encoding=utf-8
 
+" Leader character for mappings.
+let mapleader=","
+let maplocalleader=","
+
 " In the viminfo state file, store file marks and unlimited register contents.
 " Search, command line and input history size are defined via 'history'.
 " Also, put the viminfo file in ~/.vim, not directly in the home directory.
