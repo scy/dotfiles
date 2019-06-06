@@ -1,2 +1,5 @@
 # Contains pidfiles and stuff for Karabiner-Elements.
 /karabiner/
+
+# ShaDa and stuff for NeoVim.
+/nvim/
