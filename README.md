@@ -14,6 +14,7 @@ This repository tries to apply my preferred settings to both of them.
 * [OpenSSH](https://www.openssh.com/)
 * Terminal.app (manually)
 * [Termux](https://termux.com/)
+* [tmux](https://tmux.github.io/)
 * [unicompose](https://github.com/scy/unicompose)
 * [Vim](https://www.vim.org/) (needs to be fleshed out further)
 * [Visual Studio Code](https://code.visualstudio.com/)
