@@ -5,3 +5,6 @@ if status --is-interactive
 end
 
 abbr -a e edit
+
+# Notes, todos etc.
+abbr -a td edit ~/my/todo.md
