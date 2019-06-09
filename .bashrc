@@ -10,6 +10,8 @@ FISHCONF="$HOME/.config/fish/conf.d"
 
 # Get $PATH from the fish config file. The `eval` call is required to resolve variables in the result (e.g. $HOME).
 scy_init_path() {
+	# Since printf will repeat the format string if there are multiple parameters, this automatically deals with
+	# fish using spaces to separate the directories.
 	export PATH="$(eval printf '%s:' $(sed -n -e 's/^set -U fish_user_paths //p' "$FISHCONF/path.fish"))$PATH"
 }
 
