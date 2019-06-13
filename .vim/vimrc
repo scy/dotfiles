@@ -5,6 +5,11 @@ filetype plugin on
 syntax on
 set encoding=utf-8
 
+" Disable modelines for security reasons, see CVE-2019-12735 et al.
+" They are off by default on Debian, but "set nocompatible" above will have
+" turned them on nevertheless.
+set nomodeline
+
 " Leader character for mappings.
 let mapleader=","
 let maplocalleader=","
