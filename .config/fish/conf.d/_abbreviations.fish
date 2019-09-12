@@ -8,3 +8,6 @@ abbr -a e edit
 
 # Notes, todos etc.
 abbr -a td edit ~/my/todo.md
+
+# Add a new entry to the timesheet.
+abbr -a tt "vim -c 'normal ,n' ~/my/timesheet.txt"
