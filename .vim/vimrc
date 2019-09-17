@@ -23,3 +23,10 @@ set history=100
 " Don't litter .swp files all over the place, put them in ~/.vim/swp instead,
 " but fall back to "same directory" if that's not possible for some reason.
 set directory=~/.vim/swp,.
+
+" Configure my Vimwiki.
+let g:vimwiki_list = [{
+	\ 'path': '~/my/w',
+	\ 'syntax': 'markdown',
+	\ 'ext': '.md',
+\ }]
