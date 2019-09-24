@@ -1,3 +1,6 @@
 [submodule ".vim/pack/vimwiki/start/vimwiki"]
 	path = .vim/pack/vimwiki/start/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule ".vim/pack/timesheet/start/vim-timesheet"]
+	path = .vim/pack/timesheet/start/vim-timesheet
+	url = https://github.com/scy/vim-timesheet.git
