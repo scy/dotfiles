@@ -26,6 +26,10 @@
 /.python_history
 /.sqlite_history
 
+# autoborg configs.
+/.autoborg/
+/.*.autoborg/
+
 # Git credentials (see credential.helper=store in .gitconfig).
 /.git-credentials
 
