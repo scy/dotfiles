@@ -24,6 +24,16 @@ set history=100
 " but fall back to "same directory" if that's not possible for some reason.
 set directory=~/.vim/swp,.
 
+" Dark background, duh.
+set background=dark
+
+" Changing cursors on mode change.
+if &term =~ "xterm"
+	let &t_SI = "\<Esc>[5 q" " blinking bar
+	let &t_SR = "\<Esc>[3 q" " blinking underscore
+	let &t_EI = "\<Esc>[1 q" " blinking block
+endif
+
 " Configure my Vimwiki.
 let g:vimwiki_list = [{
 	\ 'path': '~/my/w',
