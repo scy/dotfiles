@@ -35,7 +35,8 @@ To install this file under Windows 10, do the following:
 
 	// Glob -> File Type associations.
 	"files.associations": {
-		"Saltfile": "yaml"
+		"Saltfile": "yaml",
+		"*.zcml": "xml"
 	},
 
 	// Files should (almost) always use LF line endings, not CRLF, not even under Windows.
