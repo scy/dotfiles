@@ -55,8 +55,9 @@ To install this file under Windows 10, do the following:
 	// Starting with the project name allows me to distinguish multiple Code instances in the task bar more easily.
 	"window.title": "${rootName}${separator}${dirty}${activeEditorShort}",
 
-	// Color theme: Solarized Dark. I've tried others, I'm wasn't convinced.
-	"workbench.colorTheme": "Solarized Dark",
+	// Color theme: I'm trying to use One Dark Pro everywhere.
+	// <https://github.com/scy/one-dark-pro-everywhere>
+	"workbench.colorTheme": "One Dark Pro",
 
 	// This apparently sends keystrokes to Microsoft when searching in the settings. Don't need it.
 	"workbench.settings.enableNaturalLanguageSearch": false,
