@@ -58,6 +58,17 @@ chsh -s $(which fish)
 
 Then, continue as described below in the "Unix" section.
 
+### Windows
+
+Install [Git for Windows](https://git-scm.com/download/win).
+Then, in a command prompt at your home directory, run
+
+```sh
+git clone --recurse-submodules https://github.com/scy/dotfiles.git
+```
+
+Afterwards, symlink VS Code's `settings.json` [as described in it](.config/Code/User/settings.json).
+
 ### Unix
 
 ```sh
