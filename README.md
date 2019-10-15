@@ -46,13 +46,13 @@ chsh -s fish
 
 Then, continue as described below in the "Unix" section.
 
-### Debian
+### Ubuntu / Debian
 
 Install required packages and change the default shell.
 
 ```sh
-apt update                 &&
-apt install fish git rsync &&
+sudo apt update                 &&
+sudo apt install fish git rsync &&
 chsh -s $(which fish)
 ```
 
@@ -72,11 +72,11 @@ Afterwards, symlink VS Code's `settings.json` [as described in it](.config/Code/
 ### Unix
 
 ```sh
-which rsync > /dev/null                        &&
-umask 0022 && cd                               &&
-test ! -e .orig_home                           &&
-git clone https://github.com/scy/dotfiles.git  &&
-rsync -avb --backup-dir=.orig_home dotfiles/ . &&
+which rsync > /dev/null                                             &&
+umask 0022 && cd                                                    &&
+test ! -e .orig_home                                                &&
+git clone --recurse-submodules https://github.com/scy/dotfiles.git  &&
+rsync -avb --backup-dir=.orig_home dotfiles/ .                      &&
 rm -rf dotfiles
 ```
 
