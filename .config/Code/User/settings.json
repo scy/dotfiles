@@ -49,6 +49,15 @@ To install this file under Windows 10, do the following:
 	// Also, lines should _usually_ not end with whitespace.
 	"files.trimTrailingWhitespace": true,
 
+	// File paths not to watch, e.g. because they get created and deleted quickly which can cause
+	// “permission denied” errors.
+	"files.watcherExclude": {
+		"**/.git/objects/**": true,
+		"**/.git/subtree-cache/**": true,
+		"**/node_modules/*/**": true,
+		"**/target/*/incremental/**": true,  // Rust’s incremental compilation.
+	},
+
 	// Run "git fetch" periodically. Not sure whether I want to keep this.
 	"git.autofetch": true,
 
