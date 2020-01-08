@@ -17,7 +17,15 @@ let maplocalleader=","
 " In the viminfo state file, store file marks and unlimited register contents.
 " Search, command line and input history size are defined via 'history'.
 " Also, put the viminfo file in ~/.vim, not directly in the home directory.
-set viminfo='100,h,f1,n~/.vim/viminfo
+" In Neovim, 'viminfo' is an alias to 'shada', but viminfo and ShaDa files are
+" incompatible. So on a system running both Vim and Neovim, 'viminfo'/'shada'
+" should point to different files.
+set viminfo='100,h,f1
+if has('nvim')
+	set shada+=n~/.vim/shada
+else
+	set viminfo+=n~/.vim/viminfo
+endif
 set history=100
 
 " Don't litter .swp files all over the place, put them in ~/.vim/swp instead,

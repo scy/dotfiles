@@ -3,3 +3,6 @@
 
 # The viminfo file holds marks, register content and history. Don't add it to Git.
 /viminfo
+
+# The shada file does basically the same, but for Neovim.
+/shada
