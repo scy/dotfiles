@@ -64,8 +64,11 @@ else
 endif
 set list
 
-" Show (relative) line numbers.
-set number relativenumber
+" Show line numbers, but no relative ones. That's because I'm using Windows
+" console quite a lot, which has slow rendering (compared to e.g. Windows
+" Terminal or even Termux), and 'relativenumber' has to redraw the whole
+" number column on each line change.
+set number norelativenumber
 " Make them unobtrusive.
 highlight LineNr ctermfg=DarkGray
 
