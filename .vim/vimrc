@@ -43,6 +43,11 @@ else
 endif
 set list
 
+" Show (relative) line numbers.
+set number relativenumber
+" Make them unobtrusive.
+highlight LineNr ctermfg=DarkGray
+
 " Default tab width.
 set tabstop=4 shiftwidth=4
 
@@ -79,5 +84,16 @@ let g:vimwiki_list = [{
 " Mappings.
 " Toggle file tree.
 map <Leader>l :Lexplore<CR>
+" Show/hide line numbers.
+function! ToggleLineNumbers()
+	if &number
+		set nonumber norelativenumber
+	else
+		set number relativenumber
+	endif
+endfunction
+noremap <Leader>n :call ToggleLineNumbers()<CR>
+" Toggle between relative and absolute line numbers.
+noremap <Leader>N :set relativenumber!<CR>
 " Open a terminal window shell that closes automatically when exiting.
 map <Leader>! :terminal ++close<CR>
