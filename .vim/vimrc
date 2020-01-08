@@ -102,10 +102,17 @@ let g:netrw_winsize = 20
 "    Vimwiki    /
 " _____________/
 
+" Disable creation of ”temporary wikis“ for every .md file I edit.
+let g:vimwiki_global_ext = 0
 " When creating a link in a Markdown file, add the `.md` extension.
 let g:vimwiki_markdown_link_ext = 1
+" List of my personal wikis.
 let g:vimwiki_list = [{
 	\ 'path': '~/my/w',
+	\ 'syntax': 'markdown',
+	\ 'ext': '.md',
+\ }, {
+	\ 'path': '~/my/todo',
 	\ 'syntax': 'markdown',
 	\ 'ext': '.md',
 \ }]
