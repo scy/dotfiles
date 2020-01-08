@@ -66,3 +66,5 @@ let g:vimwiki_list = [{
 " Mappings.
 " Toggle file tree.
 map <Leader>l :Lexplore<CR>
+" Open a terminal window shell that closes automatically when exiting.
+map <Leader>! :terminal ++close<CR>
