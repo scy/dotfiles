@@ -46,6 +46,21 @@ if &term =~ "xterm"
 	let &t_EI = "\<Esc>[1 q" " blinking block
 endif
 
+" netrw config.
+" When Vim is started, show a file list to the left.
+augroup Explorer:
+	autocmd!
+	autocmd VimEnter * Lexplore
+augroup END
+" Disable the banner.
+let g:netrw_banner = 0
+" When selecting a file, open it in the previous window (or create a new one).
+let g:netrw_browse_split = 4
+" Show files as a tree by default.
+let g:netrw_liststyle = 3
+" Default size of the split explorer is 20%.
+let g:netrw_winsize = 20
+
 " Configure my Vimwiki.
 let g:vimwiki_list = [{
 	\ 'path': '~/my/w',
