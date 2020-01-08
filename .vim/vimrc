@@ -47,11 +47,6 @@ if &term =~ "xterm"
 endif
 
 " netrw config.
-" When Vim is started, show a file list to the left.
-augroup Explorer:
-	autocmd!
-	autocmd VimEnter * Lexplore
-augroup END
 " Disable the banner.
 let g:netrw_banner = 0
 " When selecting a file, open it in the previous window (or create a new one).
@@ -67,3 +62,7 @@ let g:vimwiki_list = [{
 	\ 'syntax': 'markdown',
 	\ 'ext': '.md',
 \ }]
+
+" Mappings.
+" Toggle file tree.
+map <Leader>l :Lexplore<CR>
