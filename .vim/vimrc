@@ -57,6 +57,8 @@ let g:netrw_liststyle = 3
 let g:netrw_winsize = 20
 
 " Configure my Vimwiki.
+" When creating a link in a Markdown file, add the `.md` extension.
+let g:vimwiki_markdown_link_ext = 1
 let g:vimwiki_list = [{
 	\ 'path': '~/my/w',
 	\ 'syntax': 'markdown',
