@@ -35,6 +35,10 @@ set directory=~/.vim/swp,.
 " Dark background, duh.
 set background=dark
 
+" When splitting vertically, split to the right (not to the left). Similarly,
+" when splitting horizontally, split below (not to the top).
+set splitright splitbelow
+
 " Changing cursors on mode change.
 if &term =~ "xterm"
 	let &t_SI = "\<Esc>[5 q" " blinking bar
