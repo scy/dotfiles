@@ -35,6 +35,17 @@ set directory=~/.vim/swp,.
 " Dark background, duh.
 set background=dark
 
+" Show significant whitespace.
+if &encoding == 'utf-8'
+	set listchars=tab:›·,nbsp:¯,trail:·
+else
+	set listchars=tab:\|.,nbsp:_,trail:_
+endif
+set list
+
+" Default tab width.
+set tabstop=4 shiftwidth=4
+
 " When splitting vertically, split to the right (not to the left). Similarly,
 " when splitting horizontally, split below (not to the top).
 set splitright splitbelow
