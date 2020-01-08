@@ -1,3 +1,12 @@
+"                 _             _
+"  ___  ___ _   _( )___  __   _(_)_ __ ___  _ __ ___
+" / __|/ __| | | |// __| \ \ / / | '_ ` _ \| '__/ __|
+" \__ \ (__| |_| | \__ \  \ V /| | | | | | | | | (__
+" |___/\___|\__, | |___/ (_)_/ |_|_| |_| |_|_|  \___|
+"           |___/
+" Part of my dotfiles: <https://github.com/scy/dotfiles>
+
+
 " Basic settings: Ignore vi compatibility, use filetype plugins, syntax
 " highlighting and UTF-8.
 set nocompatible
@@ -10,9 +19,16 @@ set encoding=utf-8
 " turned them on nevertheless.
 set nomodeline
 
+
+
 " Leader character for mappings.
 let mapleader=","
 let maplocalleader=","
+
+
+
+"     Session / Swap Files / History    /
+" _____________________________________/
 
 " In the viminfo state file, store file marks and unlimited register contents.
 " Search, command line and input history size are defined via 'history'.
@@ -31,6 +47,11 @@ set history=100
 " Don't litter .swp files all over the place, put them in ~/.vim/swp instead,
 " but fall back to "same directory" if that's not possible for some reason.
 set directory=~/.vim/swp,.
+
+
+
+"    Visuals    /
+" _____________/
 
 " Dark background, duh.
 set background=dark
@@ -62,7 +83,11 @@ if &term =~ "xterm"
 	let &t_EI = "\<Esc>[1 q" " blinking block
 endif
 
-" netrw config.
+
+
+"    netrw    /
+" ___________/
+
 " Disable the banner.
 let g:netrw_banner = 0
 " When selecting a file, open it in the previous window (or create a new one).
@@ -72,7 +97,11 @@ let g:netrw_liststyle = 3
 " Default size of the split explorer is 20%.
 let g:netrw_winsize = 20
 
-" Configure my Vimwiki.
+
+
+"    Vimwiki    /
+" _____________/
+
 " When creating a link in a Markdown file, add the `.md` extension.
 let g:vimwiki_markdown_link_ext = 1
 let g:vimwiki_list = [{
@@ -81,7 +110,11 @@ let g:vimwiki_list = [{
 	\ 'ext': '.md',
 \ }]
 
-" Mappings.
+
+
+"    Mappings    /
+" ______________/
+
 " Toggle file tree.
 map <Leader>l :Lexplore<CR>
 " Show/hide line numbers.
