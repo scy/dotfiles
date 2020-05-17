@@ -119,11 +119,15 @@ let g:vimwiki_list = [{
 	\ 'syntax': 'markdown',
 	\ 'ext': '.md',
 \ }]
+let g:vimwiki_conceallevel = 0
 
 
 
-"    Mappings    /
-" ______________/
+"    Mappings and Controls    /
+" ___________________________/
+
+" Enable the mouse.
+set mouse=a
 
 " Toggle file tree.
 map <Leader>l :Lexplore<CR>
