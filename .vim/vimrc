@@ -22,8 +22,8 @@ set nomodeline
 
 
 " Leader character for mappings.
-let mapleader=","
-let maplocalleader=","
+let mapleader="\\"
+let maplocalleader="\\"
 
 
 
