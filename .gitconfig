@@ -1,6 +1,10 @@
 [user]
+	# Set my name, but require me to set the email address manually for each
+	# repo. This should hopefully solve the cases where I’m committing (and
+	# pushing) from the wrong address for days.
+	# See <https://github.com/scy/dotfiles/issues/9> for rationale.
 	name = Tim Weber
-	email = scy@scy.name
+	useConfigOnly = true
 
 [interactive]
 	singlekey = true
@@ -24,6 +28,9 @@
 	st = stash
 	stp = stash pop
 	u = pull
+	# Email addresses (private and business).
+	scy = config user.email scy@scy.name
+	tw = config user.email mail@timweber.name
 
 [pull]
 	# `git pull` should use `rebase` instead of doing a merge commit.
