@@ -79,11 +79,11 @@ set tabstop=4 shiftwidth=4
 " when splitting horizontally, split below (not to the top).
 set splitright splitbelow
 
-" Changing cursors on mode change.
-if &term =~ "xterm"
-	let &t_SI = "\<Esc>[5 q" " blinking bar
-	let &t_SR = "\<Esc>[3 q" " blinking underscore
-	let &t_EI = "\<Esc>[1 q" " blinking block
+" Changing cursors on mode change. (tmux also uses TERM=screen.)
+if &term =~ "xterm" || &term =~ "screen"
+	let &t_SI = "\<Esc>[5 q" " start insert: blinking bar
+	let &t_SR = "\<Esc>[3 q" " start replace: blinking underscore
+	let &t_EI = "\<Esc>[1 q" " end insert/replace: blinking block
 endif
 
 
