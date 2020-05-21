@@ -1,41 +1,29 @@
 # This file will be sourced by every interactive bash and, since it's sourced in ~/.bash_profile, also by login bashes.
 
-FISHCONF="$HOME/.config/fish/conf.d"
+# Default umask is 0022, i.e. write permissions only for the user, not the group.
+# Some OSes have different defaults; this defines a standard for all of my machines.
+umask 0022
 
-# Load simple aliases. It's a fish file, but I've designed it to be bash compatible.
-. "$FISHCONF/aliases.fish"
+# Set a custom PATH by modifying the default one. However, keep a copy of the default one in order to not keep prefixing
+# it when nesting shells etc.
+[ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$MASTERPATH"
 
-# The umask setting is bash-compatible as well.
-. "$FISHCONF/umask.fish"
+# I have a script that chooses the "best" editor available on the system.
+export EDITOR="$HOME/bin/edit"
+export VISUAL="$EDITOR"
 
-# Get $PATH from the fish config file. The `eval` call is required to resolve variables in the result (e.g. $HOME).
-scy_init_path() {
-	# Since printf will repeat the format string if there are multiple parameters, this automatically deals with
-	# fish using spaces to separate the directories.
-	export PATH="$(eval printf '%s:' $(sed -n -e 's/^set -U fish_user_paths //p' "$FISHCONF/path.fish"))$PATH"
-}
+# Talk English to me.
+export LANG='en_US.UTF-8'
 
-# Load environment variables from the fish config. We need to do some basic replacement to make it work in bash.
-scy_init_env() {
-	eval $(sed -n -e 's/^set -gx \([^ ]*\) /export \1=/p' "$FISHCONF/env.fish")
-}
+# For each Git alias defined in .gitconfig, create a corresponding shell alias, prefixed with `g`.
+# For example, the Git alias `s` for `status` will be available as `git s`, but also as `gs`.
+# This line, by design, doesn't throw errors when Git is not installed.
+eval alias g='git' $(git config --global --get-regexp '^alias\.' 2>/dev/null | sed -e 's/^alias\.\([^ ]*\) .*$/g\1='"'g \1'/")
 
-# Edit a shell config file and then reload it. Some special cases for fish configs.
-edit_and_source() {
-	edit "$1"
-	rc="$?"
-	if [ "$rc" -ne 0 ]; then
-		return "$rc"
-	fi
-	case "$1" in
-		*/env.fish)
-			scy_init_env
-			;;
-		*/path.fish)
-			scy_init_path
-			;;
-		*)
-			. "$1"
-			;;
-	esac
-}
+# Editor.
+alias e='edit'
+
+# Diagnostics.
+alias 1='ping 1.1.1.1'
+alias 8='ping 8.8.8.8'

@@ -6,8 +6,7 @@ This repository tries to apply my preferred settings to both of them.
 
 ## What's configured
 
-* [bash](http://tiswww.case.edu/php/chet/bash/bashtop.html) environment (basic stuff only, I'm mostly using fish)
-* [fish](https://fishshell.com/) environment and abbreviations
+* [bash](https://www.gnu.org/software/bash/) environment
 * [Git](https://git-scm.com/)
 * [Karabiner-Elements](https://github.com/tekezo/Karabiner-Elements)
 * keyboard layout on macOS (manually)
@@ -24,7 +23,7 @@ This repository tries to apply my preferred settings to both of them.
 This is currently replacing [dotscy](https://github.com/scy/dotscy) in order to have a fresh start.
 The old repo contained a lot of configs for tools that I no longer use, even fonts and binaries that I don't want anymore, but still had in the history.
 
-These settings have been in use on macOS and Debian (in WSL and standalone); they should run on other Unixes as well.
+These settings have been in use on macOS and Debian/Ubuntu (in WSL and standalone); they should run on other Unixes as well.
 
 ## Setting up
 
@@ -36,24 +35,22 @@ Files/directories that would be overwritten will be backed up to `~/.orig_home`.
 
 ### Termux
 
-Install required (and my favorite) packages, setup storage access and change the default shell.
+Install required (and my favorite) packages and setup storage access.
 
 ```sh
-pkg install curl fish git neovim perl rsync termux-api &&
-termux-setup-storage                                   &&
-chsh -s fish
+pkg install curl git neovim perl rsync termux-api &&
+termux-setup-storage
 ```
 
 Then, continue as described below in the "Unix" section.
 
 ### Ubuntu / Debian
 
-Install required packages and change the default shell.
+Install required packages.
 
 ```sh
-sudo apt update                 &&
-sudo apt install fish git rsync &&
-chsh -s $(which fish)
+sudo apt update            &&
+sudo apt install git rsync
 ```
 
 Then, continue as described below in the "Unix" section.
