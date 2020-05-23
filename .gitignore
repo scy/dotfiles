@@ -49,6 +49,12 @@
 # Drush cache.
 /.drush/cache/
 
+# PulseAudio auth.
+/.esd_auth
+
+# Firefox.
+/.mozilla/
+
 # npm stuff, mainly cache and logs. I'll ignore more specifically as soon as I need it.
 /.config/configstore/update-notifier-npm.json
 /.npm/
@@ -68,3 +74,33 @@
 
 # wget's HSTS database.
 /.wget-hsts
+
+# The xsel log file.
+/.xsel.log
+
+# Lots of (probably) default Gnome or Fedora stuff.
+/.config/dconf/
+/.config/dleyna-renderer-service.conf
+/.config/evolution/
+/.config/gnome-control-center/
+/.config/gnome-initial-setup-done
+/.config/gtk-3.0/
+/.config/ibus/
+/.config/monitors.xml*
+/.config/pulse/
+/.config/user-dirs.dirs
+/.config/user-dirs.locale
+/.config/yelp/
+/.local/share/containers/
+/.local/share/evolution/
+/.local/share/flatpak/
+/.local/share/folks/
+/.local/share/gnome-settings-daemon/
+/.local/share/gnome-shell/
+/.local/share/gsettings-data-convert
+/.local/share/gvfs-metadata/
+/.local/share/icc/
+/.local/share/keyrings/
+/.local/share/recently-used.xbel
+/.local/share/tracker/
+/.local/share/webkitgtk/
