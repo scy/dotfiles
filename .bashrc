@@ -1,5 +1,8 @@
 # This file will be sourced by every interactive bash and, since it's sourced in ~/.bash_profile, also by login bashes.
 
+# First, if there's a global bashrc, load it.
+[ -f /etc/bashrc ] && . /etc/bashrc
+
 # Default umask is 0022, i.e. write permissions only for the user, not the group.
 # Some OSes have different defaults; this defines a standard for all of my machines.
 umask 0022
