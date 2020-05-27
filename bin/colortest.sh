@@ -24,7 +24,7 @@ color_name() {
 print_cell() {
 	code="3${2};4${1}"
 	[ "$3" = '1' ] && code="1;$code"
-	printf '\e[%sm %7s \e[0m ' "$code" "$code"
+	printf '\033[%sm %7s \033[0m ' "$code" "$code"
 }
 
 #  $1  base foreground color for this line (0-7 or 9 for "default")
@@ -33,7 +33,7 @@ print_line() {
 	name="$(color_name "$1")"
 	one=''
 	[ "$2" = '1' ] && name="bold $name" && one='1;'
-	printf '\e[%s3%d;49m%12s\e[0m  ' "$one" "$1" "$name"
+	printf '\033[%s3%d;49m%12s\033[0m  ' "$one" "$1" "$name"
 	for bg in 9 0 1 2 3 4 5 6 7; do
 		print_cell "$bg" "$1" "$2"
 	done
@@ -42,7 +42,7 @@ print_line() {
 # Header line.
 printf '%12s  '  # space for color name column
 for color in 9 0 1 2 3 4 5 6 7; do
-	printf '\e[3%d;49m %7s \e[0m ' "$color" "$(color_name "$color")"
+	printf '\033[3%d;49m %7s \033[0m ' "$color" "$(color_name "$color")"
 done
 printf '\n'
 
