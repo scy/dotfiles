@@ -19,6 +19,9 @@ export VISUAL="$EDITOR"
 # Talk English to me.
 export LANG='en_US.UTF-8'
 
+# Reloading .bashrc.
+alias rc=". '$HOME/.bashrc'"
+
 # For each Git alias defined in .gitconfig, create a corresponding shell alias, prefixed with `g`.
 # For example, the Git alias `s` for `status` will be available as `git s`, but also as `gs`.
 # This line, by design, doesn't throw errors when Git is not installed.
@@ -26,8 +29,8 @@ eval alias g='git' $(git config --global --get-regexp '^alias\.' 2>/dev/null | s
 
 # Editor.
 alias e='edit'
-alias erc="edit '$HOME/.bashrc'; . '$HOME/.bashrc'"
-alias egit="edit '$HOME/.gitconfig'; . '$HOME/.bashrc'" # source bashrc since Git aliases could have been updated
+alias erc="edit '$HOME/.bashrc'; rc"
+alias egit="edit '$HOME/.gitconfig'; rc" # source bashrc since Git aliases could have been updated
 
 # Diagnostics.
 alias 1='ping 1.1.1.1'
