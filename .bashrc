@@ -26,6 +26,8 @@ eval alias g='git' $(git config --global --get-regexp '^alias\.' 2>/dev/null | s
 
 # Editor.
 alias e='edit'
+alias erc="edit '$HOME/.bashrc'; . '$HOME/.bashrc'"
+alias egit="edit '$HOME/.gitconfig'; . '$HOME/.bashrc'" # source bashrc since Git aliases could have been updated
 
 # Diagnostics.
 alias 1='ping 1.1.1.1'
