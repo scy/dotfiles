@@ -32,6 +32,10 @@ alias e='edit'
 alias erc="edit '$HOME/.bashrc'; rc"
 alias egit="edit '$HOME/.gitconfig'; rc" # source bashrc since Git aliases could have been updated
 
+# If an alias value ends in a space, the following word is alias-expanded, too.
+# So, this will allow you to use your aliases even when passing them to sudo:
+alias sudo='sudo '
+
 # Diagnostics.
 alias 1='ping 1.1.1.1'
 alias 8='ping 8.8.8.8'
