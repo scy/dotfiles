@@ -7,7 +7,8 @@ set -e
 # is not available on this system.
 
 # Please note that this file contains literal escape and tab characters inside
-# of strings.
+# of strings. Make sure you include these when copy-pasting the file from
+# somewhere, or, even better, download the file instead of copy-pasting.
 
 git config --get-regexp '^alias\.' |
 	sed -e 's/^alias\.\([^ ]*\) /[1;33m\1:[m	/' |
