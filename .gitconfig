@@ -11,6 +11,11 @@
 
 [alias]
 	a = add
+	# List aliases in a (more) beautiful way. This mainly strips the “alias.”
+	# prefix, hides itself from the output, adds color, and pipes the output to
+	# `column`, so that it doesn’t have to rely on the tab character. However,
+	# there’s a fallback to `cat` if `column` is not available on this system.
+	al = "! git config --get-regexp '^alias\\.' | sed -n -e 's/^alias\\.al //' -e 's/^alias\\.\\([^ ]*\\) /[1;33m\\1:[m\t/p' | { column -t -s '\t' || cat; }"
 	ap = add --patch
 	c = commit
 	ca = commit --all
