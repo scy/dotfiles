@@ -12,6 +12,16 @@ umask 0022
 [ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
 export PATH="$HOME/bin:$HOME/.local/bin:$MASTERPATH"
 
+# ls aliases.
+# Arguments common to every ls alias. Only use `--color` if ls actually supports that parameter.
+alias ls="ls -F$(ls --color=auto "$HOME" >/dev/null 2>&1 && printf ' %s' '--color=auto')"
+# List all (a), long format (l, one per line) and a combination of both.
+alias a='ls -a' l='ls -lh' la='l -a'
+# List by time. Also some combinations for reversing and combining with -a.
+alias lt='l -t' ltr='lt -r' lta='lt -a' lat='lta' ltar='lta -r' latr='ltar'
+# List by size. Same combinations as above.
+alias lz='l -S' lzr='lz -r' lza='lz -a' laz='lza' lzar='lza -r' lazr='lzar'
+
 # I have a script that chooses the "best" editor available on the system.
 export EDITOR="$HOME/bin/edit"
 export VISUAL="$EDITOR"
