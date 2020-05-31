@@ -60,3 +60,6 @@ alias 8='ping 8.8.8.8'
 PS1='\n\[\e[0;32m\][\[\e[1;30m\]\t\[\e[0;32m\]]\[\e[0m\] \u\[\e[1;30m\]@\[\e[0m\]\h\[\e[1;34m\] \w \[\e[0;33m\]#\!\[\e[1;32m\] \$ \[\e[0m\]'
 # With `set -x`, print a timestamp before printing the command.
 PS4='\[\e[0;32m\][\[\e[1;30m\]\t\[\e[0;32m\]]\[\e[0m\] '
+
+# Source a local bashrc, if it exists.
+[ -f "$HOME/.bashrc.local" ] && . "$HOME/.bashrc.local"

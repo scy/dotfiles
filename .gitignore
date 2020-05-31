@@ -21,6 +21,9 @@
 # More macOS stuff.
 **/.DS_Store
 
+# Local bashrc.
+/.bashrc.local
+
 # Cache.
 /.cache/
 
