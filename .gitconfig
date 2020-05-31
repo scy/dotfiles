@@ -19,6 +19,7 @@
 	caam = commit --all --amend
 	cl = clone --recurse-submodules
 	co = checkout
+	cop = checkout --patch
 	d = diff
 	ds = diff --staged
 	ig = edit-ignore # not a Git builtin either
