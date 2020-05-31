@@ -7,6 +7,12 @@
 # Some OSes have different defaults; this defines a standard for all of my machines.
 umask 0022
 
+# Automatically change into directories (without `cd`), and fail commands when nothing matches a glob.
+shopt -s autocd failglob
+
+# Don't store lines starting with a space in the history, or lines identical to the one before.
+HISTCONTROL='ignorespace:ignoredups'
+
 # Set a custom PATH by modifying the default one. However, keep a copy of the default one in order to not keep prefixing
 # it when nesting shells etc.
 [ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
