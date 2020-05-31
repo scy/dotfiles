@@ -29,7 +29,7 @@
 	st = stash
 	stp = stash pop
 	u = pull
-	ur = pull --rebase
+	ur = pull --rebase --autostash
 	# Email addresses (private and business).
 	scy = config user.email scy@scy.name
 	tw = config user.email mail@timweber.name
