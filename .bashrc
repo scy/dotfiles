@@ -12,6 +12,8 @@ shopt -s autocd failglob
 
 # Don't store lines starting with a space in the history, or lines identical to the one before.
 HISTCONTROL='ignorespace:ignoredups'
+# Store timestamps in history file, and display them as 'Mon 2020-06-01 23:42:05'.
+HISTTIMEFORMAT='%a %Y-%m-%d %H:%M:%S  '
 
 # Set a custom PATH by modifying the default one. However, keep a copy of the default one in order to not keep prefixing
 # it when nesting shells etc.
