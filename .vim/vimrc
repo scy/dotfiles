@@ -72,6 +72,9 @@ set number norelativenumber
 " Make them unobtrusive.
 highlight LineNr ctermfg=DarkGray
 
+" Soft-wrap long lines, but not in the middle of words.
+set wrap linebreak
+
 " Default tab width.
 set tabstop=4 shiftwidth=4
 
