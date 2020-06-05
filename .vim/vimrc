@@ -126,6 +126,14 @@ let g:vimwiki_conceallevel = 0
 
 
 
+"    Filetypes and Associations    /
+" ________________________________/
+
+" For now, interpret Vue.js files simply as HTML.
+au BufRead,BufNewFile *.vue set filetype=html
+
+
+
 "    Mappings and Controls    /
 " ___________________________/
 
