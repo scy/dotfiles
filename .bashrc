@@ -20,6 +20,9 @@ HISTTIMEFORMAT='%a %Y-%m-%d %H:%M:%S  '
 [ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
 export PATH="$HOME/bin:$HOME/.local/bin:$MASTERPATH"
 
+# Use gpg-agent for SSH.
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+
 # ls aliases.
 # Arguments common to every ls alias. Only use `--color` if ls actually supports that parameter.
 alias ls="ls -F$(ls --color=auto "$HOME" >/dev/null 2>&1 && printf ' %s' '--color=auto')"
