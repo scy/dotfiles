@@ -5,6 +5,8 @@
 	# See <https://github.com/scy/dotfiles/issues/9> for rationale.
 	name = Tim Weber
 	useConfigOnly = true
+	signingKey = 144FEA6B3FF0F6EFD035963B38ACA93052B3EB9A
+
 
 [interactive]
 	singlekey = true
@@ -31,6 +33,8 @@
 	stp = stash pop
 	u = pull
 	ur = pull --rebase --autostash
+	# Disable commit signing for a single repository.
+	nosign = config commit.gpgSign false
 	# Email addresses (private and business).
 	scy = config user.email scy@scy.name
 	tw = config user.email mail@timweber.name
@@ -50,3 +54,7 @@
 	# compromised, all hope is lost anyway. This is the simplest and most cross-
 	# platform solution.
 	helper = store
+
+[commit]
+	# By default, sign all of my commits with GnuPG.
+	gpgSign = true
