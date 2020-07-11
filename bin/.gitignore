@@ -1,2 +1,5 @@
+# npiperelay for WSL GnuPG forwarding.
+/npiperelay.exe
+
 # PHP's Composer package manager.
 /composer

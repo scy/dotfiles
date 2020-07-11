@@ -61,6 +61,11 @@ alias sudo='sudo '
 alias 1='ping 1.1.1.1'
 alias 8='ping 8.8.8.8'
 
+# GnuPG when under WSL.
+if grep -q Microsoft /proc/version 2>/dev/null; then
+	setsid wsl-gpg-agent.sh >/dev/null 2>&1
+fi
+
 # A simple prompt.
 # I'm using $HOSTNAME instead of \h so that it can be overridden, e.g. by a
 # local bashrc.
