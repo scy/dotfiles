@@ -3,6 +3,11 @@
 # First, if there's a global bashrc, load it.
 [ -f /etc/bashrc ] && . /etc/bashrc
 
+# If we are in a terminal, tmux is available and we're not running from _inside_ tmux already, replace this shell with tmux.
+if command -v tmux &>/dev/null && [ -t 0 ] && [ -z "$TMUX" ]; then
+	exec tmux new-session -A -t main
+fi
+
 # Default umask is 0022, i.e. write permissions only for the user, not the group.
 # Some OSes have different defaults; this defines a standard for all of my machines.
 umask 0022
