@@ -68,7 +68,9 @@ alias 8='ping 8.8.8.8'
 
 # GnuPG when under WSL.
 if grep -q Microsoft /proc/version 2>/dev/null; then
-	setsid wsl-gpg-agent.sh >/dev/null 2>&1
+	tmux new-session -d -s wsl-gpg-agent wsl-gpg-agent.sh >/dev/null 2>&1
+	# I've tried symlinking the usual location to the wsl-ssh-pageant socket, didn't work. So let's change SSH_AUTH_SOCK instead.
+	export SSH_AUTH_SOCK="$(wslpath -a "$(cmd.exe /c echo %APPDATA% 2>/dev/null | tr -d '\r')")/gnupg/S.wsl-ssh-pageant"
 fi
 
 # A simple prompt.

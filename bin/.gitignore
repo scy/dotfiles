@@ -1,5 +1,6 @@
-# npiperelay for WSL GnuPG forwarding.
+# npiperelay and wsl-ssh-pageant for WSL GnuPG forwarding.
 /npiperelay.exe
+/wsl-ssh-pageant.exe
 
 # PHP's Composer package manager.
 /composer
