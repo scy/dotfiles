@@ -7,6 +7,9 @@
 	useConfigOnly = true
 	signingKey = 144FEA6B3FF0F6EFD035963B38ACA93052B3EB9A
 
+[init]
+	# Name the default branch "main", not "master". #BlackLivesMatter
+	defaultBranch = main
 
 [interactive]
 	singlekey = true
