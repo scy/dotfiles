@@ -27,6 +27,7 @@
 	cop = checkout --patch
 	d = diff
 	ds = diff --staged
+	f = fetch
 	ig = edit-ignore # not a Git builtin either
 	l = log
 	lp = log --patch
