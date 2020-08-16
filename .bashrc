@@ -38,6 +38,12 @@ alias lt='l -t' ltr='lt -r' lta='lt -a' lat='lta' ltar='lta -r' latr='ltar'
 # List by size. Same combinations as above.
 alias lz='l -S' lzr='lz -r' lza='lz -a' laz='lza' lzar='lza -r' lazr='lzar'
 
+# Create a directory and then change into it. If multiple directories are supplied,
+# change into the last one.
+mcd() {
+	mkdir -p -- "$@" && cd "${!#}"
+}
+
 # I have a script that chooses the "best" editor available on the system.
 export EDITOR="$HOME/bin/edit"
 export VISUAL="$EDITOR"
