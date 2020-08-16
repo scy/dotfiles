@@ -12,8 +12,9 @@ fi
 # Some OSes have different defaults; this defines a standard for all of my machines.
 umask 0022
 
-# Automatically change into directories (without `cd`), and fail commands when nothing matches a glob.
-shopt -s autocd failglob
+# Automatically change into directories (without `cd`).
+# I've been using `failglob` too, but it breaks too many completion scripts.
+shopt -s autocd
 
 # Don't store lines starting with a space in the history, or lines identical to the one before.
 HISTCONTROL='ignorespace:ignoredups'
