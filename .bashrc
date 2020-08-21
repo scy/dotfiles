@@ -26,6 +26,8 @@ HISTTIMEFORMAT='%a %Y-%m-%d %H:%M:%S  '
 [ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
 export PATH="$HOME/bin:$HOME/.local/bin:$MASTERPATH"
 
+# Configure my OpenPGP key ID.
+export PGPID="$(awk '/^default-key / { print $2 }' < $HOME/.gnupg/gpg.conf 2>/dev/null)"
 # Use gpg-agent for SSH.
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 
