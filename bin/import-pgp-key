@@ -1,0 +1,3 @@
+#!/bin/sh
+
+curl -Ls https://scy.name/keys/52B3EB9A.asc | gpg --import
