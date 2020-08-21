@@ -83,6 +83,13 @@ rsync -avb --backup-dir=.orig_home dotfiles/ .                      &&
 rm -rf dotfiles
 ```
 
+**Hint:**
+If you'd like to run these commands on a machine you can't copy/paste to, you can extract and run that section of the readme using this piece of `sed` magic:
+
+```sh
+curl -sL raw.githubusercontent.com/scy/dotfiles/master/README.md | sed -n '/^### Unix$/,/^```$/ { /```/d; p }' | sh
+```
+
 ## Manual configuration
 
 Although I'm aiming to automate as much as possible with this repo, for some things it's currently too complicated, at least at the moment.
