@@ -53,6 +53,12 @@ sudo apt update            &&
 sudo apt install git rsync
 ```
 
+These might also make sense:
+
+```sh
+sudo apt install scdaemon vim
+```
+
 Then, continue as described below in the "Unix" section.
 
 ### Windows
