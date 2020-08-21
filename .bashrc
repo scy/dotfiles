@@ -28,6 +28,9 @@ export PATH="$HOME/bin:$HOME/.local/bin:$MASTERPATH"
 
 # Configure my OpenPGP key ID.
 export PGPID="$(awk '/^default-key / { print $2 }' < $HOME/.gnupg/gpg.conf 2>/dev/null)"
+# If we're not running in a GUI, ask GnuPG to do PIN entry in this terminal.
+# TODO: Check whether this works for WSL & Wayland. Probably not.
+[ -z "$DISPLAY" ] && export GPG_TTY="$(tty)"
 # Use gpg-agent for SSH.
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 # When cloning .gnupg via git, it receives 0755 permissions by default. Fix those, else it keeps displaying a warning.
