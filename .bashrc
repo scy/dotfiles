@@ -30,6 +30,8 @@ export PATH="$HOME/bin:$HOME/.local/bin:$MASTERPATH"
 export PGPID="$(awk '/^default-key / { print $2 }' < $HOME/.gnupg/gpg.conf 2>/dev/null)"
 # Use gpg-agent for SSH.
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+# When cloning .gnupg via git, it receives 0755 permissions by default. Fix those, else it keeps displaying a warning.
+chmod go-rwx "$HOME/.gnupg"
 
 # ls aliases.
 # Arguments common to every ls alias. Only use `--color` if ls actually supports that parameter.
