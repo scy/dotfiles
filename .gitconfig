@@ -33,6 +33,8 @@
 	lp = log --patch
 	p = push
 	s = status
+	# Needs to be a shell alias (!git) in order to expand $HOME :(
+	sshpushes = !git config --file $HOME/.gitconfig-local url.ssh://github.com/.pushInsteadOf https://github.com/
 	st = stash
 	stp = stash pop
 	u = pull
