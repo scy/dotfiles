@@ -42,6 +42,9 @@
 # Backblaze B2 credentials.
 /.b2_account_info
 
+# Git's local config (included by my ~/.gitconfig).
+/.gitconfig-local
+
 # Git credentials (see credential.helper=store in .gitconfig).
 /.git-credentials
 

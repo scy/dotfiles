@@ -62,3 +62,7 @@
 [commit]
 	# By default, sign all of my commits with GnuPG.
 	gpgSign = true
+
+[include]
+	# Use an additional, host-specific Git config (if it exists).
+	path = ~/.gitconfig-local
