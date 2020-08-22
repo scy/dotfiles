@@ -59,6 +59,22 @@ These might also make sense:
 sudo apt install scdaemon vim
 ```
 
+When I might be working on the machine primarily via the text-only console (e.g. on Raspberry Pis), styling that console might be a good thing, too.
+I prefer these settings in `/etc/default/console-setup`:
+
+```
+CHARMAP="UTF-8"
+CODESET="Uni2"
+FONTFACE="Fixed"
+FONTSIZE="8x16"
+```
+
+Also, to get my [Sihaya](https://github.com/scy/sihaya) color scheme in the console, I add these values to the kernel command line (`/boot/cmdline.txt` on a Pi):
+
+```
+vt.default_red=36,207,74,195,0,145,0,205,83,255,112,255,0,197,0,255 vt.default_grn=35,0,166,127,112,0,147,198,81,0,249,166,140,0,220,247 vt.default_blu=32,0,9,0,203,188,165,178,76,0,13,0,255,255,247,226
+```
+
 Then, continue as described below in the "Unix" section.
 
 ### Windows
