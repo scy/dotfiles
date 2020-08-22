@@ -31,6 +31,12 @@ export PGPID="$(awk '/^default-key / { print $2 }' < $HOME/.gnupg/gpg.conf 2>/de
 # If we're not running in a GUI, ask GnuPG to do PIN entry in this terminal.
 # TODO: Check whether this works for WSL & Wayland. Probably not.
 [ -z "$DISPLAY" ] && export GPG_TTY="$(tty)"
+# Unfortunately, when using gpg-agent for SSH authentication, setting $GPG_TTY isn't enough. You need to specify the
+# correct tty to gpg-agent _globally_. Therefore I think it's of no use to set it automatically on each new terminal.
+# Instead, this alias, to be used manually, will update the agent and make it use the terminal the alias is run in.
+# Note that there seems to be no way to _retrieve_ that value again from the agent in order to check whether it has been
+# set to a sensible value _at all_ (and run `thistty` automatically if not).
+alias thistty='echo UPDATESTARTUPTTY | gpg-connect-agent'
 # Use gpg-agent for SSH.
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 # When cloning .gnupg via git, it receives 0755 permissions by default. Fix those, else it keeps displaying a warning.
