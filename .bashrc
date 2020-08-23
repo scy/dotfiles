@@ -77,6 +77,7 @@ eval alias g='git' $(git config --global --get-regexp '^alias\.' 2>/dev/null | s
 alias e='edit'
 alias erc="edit '$HOME/.bashrc'; rc"
 alias egit="edit '$HOME/.gitconfig'; rc" # source bashrc since Git aliases could have been updated
+alias evim="edit '$HOME/.vim/vimrc'"
 
 # If an alias value ends in a space, the following word is alias-expanded, too.
 # So, this will allow you to use your aliases even when passing them to sudo:
