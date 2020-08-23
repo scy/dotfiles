@@ -80,6 +80,11 @@ set directory=~/.vim/swp,.
 " Dark background, duh.
 set background=dark
 
+" NeoVim does strange things with `ctermbg=242` instead of simply reversing
+" video, and it breaks visual highlighting at least on my Linux framebuffer
+" tmux. Therefore I'm explicitly configuring something that works reliably.
+highlight Visual term=reverse cterm=reverse guibg=DarkGrey
+
 " Show significant whitespace.
 if &encoding == 'utf-8'
 	set listchars=tab:›·,nbsp:¯,trail:·
