@@ -3,5 +3,4 @@
 	url = https://github.com/scy/vim-timesheet.git
 [submodule ".vim/pack/minpac/opt/minpac"]
 	path = .vim/pack/minpac/opt/minpac
-	url = https://github.com/scy/minpac.git
-	branch = bufnr-argument-1
+	url = https://github.com/k-takata/minpac.git
