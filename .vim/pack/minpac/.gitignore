@@ -1,0 +1,5 @@
+# All the stuff in this directory is managed by minpac...
+*/
+
+# ..._except_ for the minpac directory itself which is used to submodule-clone minpac into new installations.
+!/opt/minpac/
