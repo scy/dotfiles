@@ -27,6 +27,30 @@ let maplocalleader="\\"
 
 
 
+"     Plugins    /
+" ______________/
+
+" I'm using minpac for plugin management. Nevertheless, I try to keep the
+" number of plugins I'm using to a minimum.
+
+function! PackInit() abort
+	packadd minpac
+	call minpac#init()
+
+	" For now, use my own minpac fork until PR #109 has been merged and minpac
+	" supports Vim and NeoVim versions from more than a year ago.
+	call minpac#add('scy/minpac', {'type': 'opt', 'branch': 'bufnr-argument-1'})
+
+	call minpac#add('vimwiki/vimwiki')
+endfunction
+
+" Defining these commands as suggested in the minpac readme, with some tweaks.
+command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
+command! PackClean  source $MYVIMRC | call PackInit() | call minpac#clean()
+command! PackStatus source $MYVIMRC | call PackInit() | call minpac#status()
+
+
+
 "     Session / Swap Files / History    /
 " _____________________________________/
 
