@@ -38,7 +38,7 @@ export PGPID="$(awk '/^default-key / { print $2 }' < $HOME/.gnupg/gpg.conf 2>/de
 # set to a sensible value _at all_ (and run `thistty` automatically if not).
 alias thistty='echo UPDATESTARTUPTTY | gpg-connect-agent'
 # Use gpg-agent for SSH.
-export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+command -v gpgconf >/dev/null 2>&1 && export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 # When cloning .gnupg via git, it receives 0755 permissions by default. Fix those, else it keeps displaying a warning.
 chmod go-rwx "$HOME/.gnupg"
 
