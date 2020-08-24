@@ -40,7 +40,9 @@ function! PackInit() abort
 	call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 	call minpac#add('vimwiki/vimwiki')
-	call minpac#add('prabirshrestha/vim-lsp')
+	call minpac#add('prabirshrestha/asyncomplete.vim')
+	call minpac#add('scy/vim-lsp')
+	call minpac#add('prabirshrestha/asyncomplete-lsp.vim')
 endfunction
 
 " Defining these commands as suggested in the minpac readme, with some tweaks.
