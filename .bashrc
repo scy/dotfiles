@@ -93,6 +93,8 @@ if grep -q Microsoft /proc/version 2>/dev/null; then
 	# I've tried symlinking the usual location to the wsl-ssh-pageant socket, didn't work. So let's change SSH_AUTH_SOCK instead.
 	export SSH_AUTH_SOCK="$(wslpath -a "$(cmd.exe /c echo %APPDATA% 2>/dev/null | tr -d '\r')")/gnupg/S.wsl-ssh-pageant"
 fi
+# YubiKey Manager CLI application when under WSL.
+[ -x '/mnt/c/Program Files/Yubico/YubiKey Manager/ykman.exe' ] && alias ykman='/mnt/c/Program\ Files/Yubico/YubiKey\ Manager/ykman.exe'
 
 # A simple prompt.
 # I'm using $HOSTNAME instead of \h so that it can be overridden, e.g. by a
