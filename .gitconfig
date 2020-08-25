@@ -32,6 +32,7 @@
 	ig = edit-ignore # not a Git builtin either
 	l = log
 	lp = log --patch
+	ls = log --stat
 	p = push
 	s = status
 	# Needs to be a shell alias (!git) in order to expand $HOME :(
