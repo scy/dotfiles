@@ -68,6 +68,9 @@
 # Python stuff.
 /.pylint.d/*.stats
 
+# sudo flag file.
+/.sudo_as_admin_successful
+
 # Visual Studio Code Remote code and data.
 /.vscode-remote/
 /.vscode-server/
