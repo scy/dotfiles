@@ -1,0 +1,26 @@
+#!/bin/sh
+
+for cmd in tmux asciinema; do
+	if ! command -v "$cmd" >/dev/null 2>&1; then
+		echo "missing $cmd" >&2
+		exit 1
+	fi
+done
+
+if [ -z "$TMUX" ]; then
+	echo 'please run this inside tmux' >&2
+	exit 2
+fi
+
+tmux setw force-width 160 \; setw force-height 50
+
+now="$(date +%Y-%m-%d-%H%M%S)"
+file="$HOME/asciirec-$now.cast"
+
+if [ "$#" -eq 0 ]; then
+	asciinema rec -i 5 "$file"
+else
+	asciinema rec -i 5 -c "$*" "$file"
+fi
+
+tmux setw force-width 0 \; setw force-height 0
