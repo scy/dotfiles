@@ -111,6 +111,15 @@ curl -sL raw.githubusercontent.com/scy/dotfiles/master/README.md | sed -n '/^###
 Although I'm aiming to automate as much as possible with this repo, for some things it's currently too complicated, at least at the moment.
 Maybe I'll add automation scripts in the future, but right now it's not worth the effort.
 
+### On machines without HTTPS push to GitHub
+
+On some machines, especially those without full disk encryption, I don’t want to store GitHub credentials directly on disk.
+Instead, I configure them to clone (anonymously) via HTTPS, but push via SSH:
+
+```sh
+git config -f ~/.gitconfig-local url.ssh://git@github.com/.pushInsteadOf https://github.com/
+```
+
 ### On a Mac
 
 * Install [Karabiner-Elements](https://github.com/tekezo/Karabiner-Elements).
