@@ -2,3 +2,5 @@
 *
 # Except for this file, of course.
 !/.gitignore
+# And the autoborg submodule.
+!/autoborg/
