@@ -6,4 +6,4 @@
 	url = https://github.com/k-takata/minpac.git
 [submodule "proj/autoborg"]
 	path = proj/autoborg
-	url = https://github.com/scy/autoborg.git
+	url = https://codeberg.org/scy/autoborg.git
