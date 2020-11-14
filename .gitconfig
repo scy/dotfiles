@@ -68,6 +68,10 @@
 	# By default, sign all of my commits with GnuPG.
 	gpgSign = true
 
+# When pushing to Codeberg, use SSH instead of HTTPS.
+[url "ssh://git@codeberg.org/"]
+	pushInsteadOf = https://codeberg.org/
+
 [include]
 	# Use an additional, host-specific Git config (if it exists).
 	path = ~/.gitconfig-local
