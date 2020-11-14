@@ -26,6 +26,7 @@
 	co = checkout
 	cob = checkout -b
 	cop = checkout --patch
+	cS = commit --no-gpg-sign
 	d = diff
 	ds = diff --staged
 	f = fetch
