@@ -35,6 +35,9 @@
 	lp = log --patch
 	ls = log --stat
 	p = push
+	rb = rebase
+	rbc = rebase --continue
+	rbi = rebase --interactive
 	s = status
 	# Needs to be a shell alias (!git) in order to expand $HOME :(
 	sshpushes = !git config --file $HOME/.gitconfig-local url.ssh://github.com/.pushInsteadOf https://github.com/
