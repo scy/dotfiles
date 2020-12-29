@@ -161,6 +161,13 @@ if executable('pyls')
 	\ })
 endif
 
+" Vue.js: npm install vls
+if executable('vls')
+	au User lsp_setup call lsp#register_server({
+		\ 'name': 'vls', 'cmd': {server_info->['vls']}, 'allowlist': ['javascript'],
+	\ })
+endif
+
 
 
 "    Mappings and Controls    /
