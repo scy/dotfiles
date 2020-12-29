@@ -3,6 +3,11 @@
 # First, if there's a global bashrc, load it.
 [ -f /etc/bashrc ] && . /etc/bashrc
 
+# Set a custom PATH by modifying the default one. However, keep a copy of the default one in order to not keep prefixing
+# it when nesting shells etc.
+[ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$MASTERPATH:$HOME/node_modules/.bin"
+
 # If we are in a terminal, tmux is available and we're not running from _inside_ tmux already, replace this shell with tmux.
 if command -v tmux &>/dev/null && [ -t 0 ] && [ -z "$TMUX" ]; then
 	exec tmux new-session -A -t main
@@ -20,11 +25,6 @@ shopt -s autocd
 HISTCONTROL='ignorespace:ignoredups'
 # Store timestamps in history file, and display them as 'Mon 2020-06-01 23:42:05'.
 HISTTIMEFORMAT='%a %Y-%m-%d %H:%M:%S  '
-
-# Set a custom PATH by modifying the default one. However, keep a copy of the default one in order to not keep prefixing
-# it when nesting shells etc.
-[ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
-export PATH="$HOME/bin:$HOME/.local/bin:$MASTERPATH:$HOME/node_modules/.bin"
 
 # Configure my OpenPGP key ID.
 export PGPID="$(awk '/^default-key / { print $2 }' < $HOME/.gnupg/gpg.conf 2>/dev/null)"
