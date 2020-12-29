@@ -1,9 +1,6 @@
 [submodule ".vim/pack/timesheet/start/vim-timesheet"]
 	path = .vim/pack/timesheet/start/vim-timesheet
 	url = https://github.com/scy/vim-timesheet.git
-[submodule ".vim/pack/minpac/opt/minpac"]
-	path = .vim/pack/minpac/opt/minpac
-	url = https://github.com/k-takata/minpac.git
 [submodule "proj/autoborg"]
 	path = proj/autoborg
 	url = https://codeberg.org/scy/autoborg.git

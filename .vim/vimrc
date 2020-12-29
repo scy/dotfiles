@@ -27,30 +27,6 @@ let maplocalleader=" "
 
 
 
-"     Plugins    /
-" ______________/
-
-" I'm using minpac for plugin management. Nevertheless, I try to keep the
-" number of plugins I'm using to a minimum.
-
-function! PackInit() abort
-	packadd minpac
-	call minpac#init()
-
-	call minpac#add('k-takata/minpac', {'type': 'opt'})
-
-	call minpac#add('prabirshrestha/asyncomplete.vim')
-	call minpac#add('scy/vim-lsp')
-	call minpac#add('prabirshrestha/asyncomplete-lsp.vim')
-endfunction
-
-" Defining these commands as suggested in the minpac readme, with some tweaks.
-command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
-command! PackClean  source $MYVIMRC | call PackInit() | call minpac#clean()
-command! PackStatus source $MYVIMRC | call PackInit() | call minpac#status()
-
-
-
 "     Session / Swap Files / History    /
 " _____________________________________/
 
