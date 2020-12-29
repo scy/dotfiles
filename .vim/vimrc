@@ -140,6 +140,12 @@ let g:netrw_winsize = 20
 " For now, interpret Vue.js files simply as HTML.
 au BufRead,BufNewFile *.vue set filetype=html
 
+" Whitelist of languages that will be syntax-highlighted in fenced Markdown
+" blocks. Can also be x=y mappings where y is the Vim filetype.
+let g:markdown_fenced_languages = [
+	\ 'bash=sh', 'javascript', 'js=javascript', 'python', 'sh',
+\ ]
+
 
 
 "    Language Server Configuration    /

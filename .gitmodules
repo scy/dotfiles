@@ -7,3 +7,6 @@
 [submodule "proj/autoborg"]
 	path = proj/autoborg
 	url = https://codeberg.org/scy/autoborg.git
+[submodule ".vim/pack/tpope-markdown/start/markdown"]
+	path = .vim/pack/tpope-markdown/start/markdown
+	url = https://github.com/tpope/vim-markdown.git
