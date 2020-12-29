@@ -14,6 +14,14 @@ filetype plugin on
 syntax on
 set encoding=utf-8
 
+" Some basic editing preferences:
+" Auto-indent new lines based on the one before.
+set autoindent
+" Preserve the indentation style (tabs/spaces) of the other line.
+set preserveindent
+" Always try to keep 5 lines and 15 columns visible around the cursor.
+set scrolloff=5 sidescrolloff=15
+
 " Disable modelines for security reasons, see CVE-2019-12735 et al.
 " They are off by default on Debian, but "set nocompatible" above will have
 " turned them on nevertheless.
