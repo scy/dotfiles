@@ -28,9 +28,9 @@ HISTTIMEFORMAT='%a %Y-%m-%d %H:%M:%S  '
 
 # Configure my OpenPGP key ID.
 export PGPID="$(awk '/^default-key / { print $2 }' < $HOME/.gnupg/gpg.conf 2>/dev/null)"
-# If we're not running in a GUI, ask GnuPG to do PIN entry in this terminal.
-# TODO: Check whether this works for WSL & Wayland. Probably not.
-[ -z "$DISPLAY" ] && export GPG_TTY="$(tty)"
+# If we're not running in a GUI or in WSL, ask GnuPG to do PIN entry in this terminal.
+# TODO: Check whether this works for Wayland. Probably not.
+[ -z "$DISPLAY" -a -z "$WSL_DISTRO_NAME" ] && export GPG_TTY="$(tty)"
 # Unfortunately, when using gpg-agent for SSH authentication, setting $GPG_TTY isn't enough. You need to specify the
 # correct tty to gpg-agent _globally_. Therefore I think it's of no use to set it automatically on each new terminal.
 # Instead, this alias, to be used manually, will update the agent and make it use the terminal the alias is run in.
