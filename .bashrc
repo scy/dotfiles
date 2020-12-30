@@ -37,8 +37,8 @@ export PGPID="$(awk '/^default-key / { print $2 }' < $HOME/.gnupg/gpg.conf 2>/de
 # Note that there seems to be no way to _retrieve_ that value again from the agent in order to check whether it has been
 # set to a sensible value _at all_ (and run `thistty` automatically if not).
 alias thistty='echo UPDATESTARTUPTTY | gpg-connect-agent'
-# Use gpg-agent for SSH.
-command -v gpgconf >/dev/null 2>&1 && export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+# Use gpg-agent for SSH if no other mechanism (e.g. ssh -A) is configured.
+[ -z "$SSH_AUTH_SOCK" ] && command -v gpgconf >/dev/null 2>&1 && export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 # When cloning .gnupg via git, it receives 0755 permissions by default. Fix those, else it keeps displaying a warning.
 chmod go-rwx "$HOME/.gnupg"
 
