@@ -1,3 +1,7 @@
+# ➡ Moved to Codeberg
+
+**This repository now lives at <https://codeberg.org/scy/dotfiles>. See [Why are you leaving GitHub?](https://codeberg.org/scy/me/src/branch/main/FAQ.md#user-content-why-are-you-leaving-github) for my reasons. Please update your bookmarks accordingly and/or notify the creator(s) of whatever brought you here.**
+
 # dotfiles
 
 Good Unix tools are configured by files written by the user, so-called dotfiles.
